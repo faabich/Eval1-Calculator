@@ -1,3 +1,5 @@
+from src.MathRequest import MathRequest
+
 operand1 = None
 operator = None
 operand2 = None
