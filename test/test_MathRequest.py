@@ -1,5 +1,4 @@
 import unittest
-
 from src.MathRequest import MathRequest
 
 class TestMathRequest(unittest.TestCase):
