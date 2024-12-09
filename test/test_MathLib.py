@@ -1,21 +1,73 @@
 import unittest
 
+from src.MathLib import MathLib
+from src.MathRequest import MathRequest
+
+
 class TestMathLib(unittest.TestCase):
 
     def setUp(self):
-        self.ope1 = 3
-        self.oper = '+'
-        self.ope2 = 5
-        self.mathLib = MathLib(self.ope1, self.oper, self.ope2)
+        pass
 
-    def test_get_addition(self):
-        self.assertEqual(self.mathLib.get_ope1(), self.ope1)
+    def test_execute_add_get_result(self):
+        #given
+        mathRequest = MathRequest(3, 'add', 4)
 
-    def test_get_oper(self):
-        self.assertEqual(self.mathLib.get_oper(), self.oper)
+        #when
+        MathLib.execute(mathRequest)
 
-    def test_get_ope2(self):
-        self.assertEqual(self.mathLib.get_ope2(), self.ope2)
+        #then
+        self.assertEqual(mathRequest.get_res(), 7)
+
+    def test_execute_sub_get_result(self):
+        # given
+        mathRequest = MathRequest(3, 'sub', 4)
+
+        # when
+        MathLib.execute(mathRequest)
+
+        # then
+        self.assertEqual(mathRequest.get_res(), -1)
+
+    def test_execute_mul_get_result(self):
+        # given
+        mathRequest = MathRequest(3, 'mul', 4)
+
+        # when
+        MathLib.execute(mathRequest)
+
+        # then
+        self.assertEqual(mathRequest.get_res(), 12)
+
+    def test_execute_div_get_result(self):
+        # given
+        mathRequest = MathRequest(3, 'div', 4)
+
+        # when
+        MathLib.execute(mathRequest)
+
+        # then
+        self.assertEqual(mathRequest.get_res(), 0.75)
+
+    def test_execute_pow_get_result(self):
+        # given
+        mathRequest = MathRequest(3, 'pow', 4)
+
+        # when
+        MathLib.execute(mathRequest)
+
+        # then
+        self.assertEqual(mathRequest.get_res(), 81)
+
+    def test_execute_root_get_result(self):
+        # given
+        mathRequest = MathRequest(3, 'root', 4)
+
+        # when
+        MathLib.execute(mathRequest)
+
+        # then
+        self.assertEqual(mathRequest.get_res(), 1.32)
 
 if __name__ == '__main__':
     unittest.main()
