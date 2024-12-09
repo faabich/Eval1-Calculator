@@ -1,12 +1,10 @@
-from src.MathLib import MathLib
-
 class MathRequest:
 
-    def __init__ (self, ope1, oper, ope2, res):
+    def __init__ (self, ope1, oper, ope2):
         self.ope1 = ope1
         self.oper = oper
         self.ope2 = ope2
-        self.res = res
+        self.res = None
 
     def get_ope1(self):
         return self.ope1
@@ -18,10 +16,10 @@ class MathRequest:
         return self.ope2
 
     def get_res(self):
-        return MathLib.res
+        return self.res
 
     def set_res(self, value):
-        raise NotImplementedError
+        self.res = value
 
     def to_string(self):
         raise NotImplementedError
